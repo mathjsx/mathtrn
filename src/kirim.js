@@ -1,64 +1,91 @@
 
  
-  var questions = [];
 
-
-   
-
-  function generateQuestionsA() {
+ function generateQuestionsA() {
     clearQuestions();
-    var aValues = [2, 3 ,4];
+    var aValues = [2,3,4];
+    var aaValues = [2,-2,3,-3,4,-4];
     var bValues = [-2, -4, -5];
-    var cValues = [5, 3, 2];
+    var cValues = [5,3,2,6,8];
     var dValues = [10, 12, 16];
     var eValues = [5,6,8,7];
-     var fValues = [8, 12,10];
-      var gValues = [24, 25,30];
-      var hValues = [4,8,16,12];
-    
+    var fValues = [8,12,10];
+    var gValues = [24,25,30];
+    var hValues = [4,8,16,12];
     var kValues = [20,30,40,50];
     var lValues = [6,9,12,15,18];
- var mValues = [60,65,75,80,85];
- 
-var nValues = [-2,2,4,7];
- 
-    for (var i = 1; i <= 17; i++) {
+    var mValues = [60,65,75,80,85];
+    var nValues = [-2,2,4,7];
+    var vValues = [-2,-3,-4];
+    var wValues = [-1,-5,-3];
+    var qValues = [1,4,9,16,25];
+    var sValues = [0,30,45,60,90,120,150,135];
+    var dsValues = [0.5,0.5,0.75,1.25,1.50];
+    var pdsValues = [1/2,3/2];
+     var rdsValues = [5,10];
+      var ddValues = [1,2,3,4,5,6];
+    var dddValues = [1,2,3,4,5,6];
+    var tpValues = [1,2,3];
+    var svValues = [10,100,1000];
+    var xxValues = [2,3,4];
+    var yyValues = [4,5,6];
+    
+    for (var i = 1; i <= 50; i++) {
       var a = aValues[Math.floor(Math.random() * aValues.length)];
       var b = bValues[Math.floor(Math.random() * bValues.length)];
       var c = cValues[Math.floor(Math.random() * cValues.length)];
-      var d = dValues[Math.floor(Math.random() * dValues.length)];
+    var d = dValues[Math.floor(Math.random() * dValues.length)];
   var e = eValues[Math.floor(Math.random() * eValues.length)];
    var f = fValues[Math.floor(Math.random() * fValues.length)];
    var g = gValues[Math.floor(Math.random() * gValues.length)];
-  
     var h = hValues[Math.floor(Math.random() * hValues.length)];
-  
   var k = kValues[Math.floor(Math.random() * kValues.length)];
    var l = lValues[Math.floor(Math.random() * lValues.length)];
-  
   var m = mValues[Math.floor(Math.random() * mValues.length)];
-  
     var n = nValues[Math.floor(Math.random() * nValues.length)];
-  
-  
-      var question = {};
+   var v = vValues[Math.floor(Math.random() * vValues.length)];
+    var w = wValues[Math.floor(Math.random() * wValues.length)];
+    var s = sValues[Math.floor(Math.random() * sValues.length)];
+    var q = qValues[Math.floor(Math.random() * qValues.length)];
+    var ds = dsValues[Math.floor(Math.random() * dsValues.length)];
+    var pds = pdsValues[Math.floor(Math.random() * pdsValues.length)];
+     var rds = rdsValues[Math.floor(Math.random() * rdsValues.length)];
+     var aa = aaValues[Math.floor(Math.random() * aaValues.length)];
+      var dd = ddValues[Math.floor(Math.random() * ddValues.length)];
+       var ddd = dddValues[Math.floor(Math.random() * dddValues.length)];
+       
+        var tp = tpValues[Math.floor(Math.random() * tpValues.length)];
+        var sv = svValues[Math.floor(Math.random() * svValues.length)];
+     var xx = xxValues[Math.floor(Math.random() * xxValues.length)];
+      var yy = yyValues[Math.floor(Math.random() * yyValues.length)];
+      var question= {};
       var equation, correctAnswer;
-
+ 
       if (i === 1) {
-        equation = "1.Hitung nilai x dari <br>x = " + a + " + (" + b + ")";
+         svg= `<svg xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="50" x2="100" y2="50" stroke="black" />
+                <line x1="50" y1="0" x2="50" y2="100" stroke="black" />
+                <circle cx="${50 + a * 10}" cy="${50 - b * 10}" r="3" fill="red" />
+                <text x="${50 + a * 10}" y="${50 - b * 10 - 5}" font-size="12" text-anchor="middle">P(${3},${4})</text>
+              </svg>`;
+        equation = "1.Hitung nilai x dari <br>x = " + a + " + (" + b + ")  ";
         correctAnswer = a + b;
       } else if (i === 2) {
+          
+        svg[2].svg= createSVG(yy, xx);     
         equation = "2.Hitung nilai x dari <br>x = " + c + " - (" + d + ")";
         correctAnswer = c - d;
       } else if (i === 3) {
+       svg= createSVG(4, 2);     
         equation = "3.Hitung nilai x dari <br>x = -(" + a + ") + (" + c+")";
         correctAnswer = -a + c;
       } else if (i === 4) {
+          svg= createSVG(2, 2);     
         equation = "4.Hitung nilai a dari <br>a =("+b+")(" + d + ") - ("+c+")(" + b + ")";
         correctAnswer = b*d - c*b;
       } else if (i === 5) {
-        equation = "5.Hitung nilai a dari <br>a= -(" + d + ") - (" + b + ") x (" + b + ")    ";
-        correctAnswer = -d - b*b;
+        equation = "5.Hitung nilai a dari a="+ds+"  +<math><mfrac><mi><mn>"+aa+"</mn></mi><mi><mn>"+rds+"</mn></mi></mfrac></math> +"+k+"%";
+        correctAnswer = ds+(aa/rds)+k/100;
       } else if (i === 6) {
         equation = "6.Hitung nilai a dari <br>a= -((" + d + ") - (" + b + ")) x (" + a + ")    ";
         correctAnswer = -(d - b)*a;
@@ -66,21 +93,23 @@ var nValues = [-2,2,4,7];
         equation = "7.Hitung nilai a dari <br>2a= -(-(" + d + ") - (" + b + ")) x (" + b + ")    ";
         correctAnswer = -(-d - b)*b/2;
        }else if (i === 8) {
-        equation = "8.Hitung x jika x/"+l+"=2/3" ;
-        correctAnswer = (2/3)*l;
+        equation = "8.Hitung x jika <math><mfrac><mi><mn>X</mn></mi><mi><mn>3</mn></mi></mfrac></math> =<math><mfrac><mi><mn>X</mn></mi><mi><mn>"+l+"</mn></mi></mfrac><mi>+</mi><mn>1</mn></math>" ;
+        correctAnswer = (3/(1-(3/l))).toFixed(1);
        } else if (i === 9) {
         equation = "9.Hitung n jika 30 =2 +(n-1)("+n+")" ;
         correctAnswer = 1+(28/n);
-        
       }else if (i === 10) {
         equation = "10.Perbandingan a:b:c=2:3:5. jika rata rata nya "+k+" maka nilai a  adalah " ;
         correctAnswer = 0.6*k;
-        }else if (i === 11) {
+      } else if (i === 18) {
+        equation = "18.Perhatikan persamaan linier yakni   <math><mfrac><mi><mn>"+a+"</mn></mi><mi><mn>"+c+"</mn></mi></mfrac></math>x=<math><mfrac><mi><mn>"+b+"</mn></mi><mi><mn>"+h+"</mn></mi></mfrac></math> maka nilai "+h+"x adalah "   ;
+        correctAnswer = (b*c)/(a);
+    }else if (i === 11) {
         equation = "11. Lima tahun yang  lalu perbandingan umur ayah  dan ibu adalah 3 :2 , jika jumlah umur keduanya sekarang "+m+" , umur ayah adalah " ;
         correctAnswer =5+(3/5)*(m-10);
       }else if (i === 12) {
         equation = "12.Suku ke " + a + " dari barisan aritmatika adalah  " + f + ", jika suku ke "+e+" adalah "+g+", maka suku ke 10  adalah " ;
-        correctAnswer = f-(a-1)*(g-f)/(e-a)+9*(g-f)/(e-a);
+        correctAnswer =parseInt( f-(a-1)*(g-f)/(e-a)+9*(g-f)/(e-a));
       }else if (i === 13) {
         equation = "13.Suku ke 1 dari barisan aritmatika adalah  " + f + ", jika b="+b+"  maka suku ke 10 adalah " ;
         correctAnswer =9*b +f;
@@ -88,33 +117,124 @@ var nValues = [-2,2,4,7];
         equation = "14.Suku ke 1 dari barisan geometri adalah  "+a+" , jika rasio r= 2, maka suku ke 5 adalah " ;
         correctAnswer =Math.pow(2,4)*(a);
       }else if (i === 15) {
-        equation = "15.Mula mula tinggi pohon "+h+" cm jika setiap hari pertumbuhannya 50% maka hari ke 5 tinggimya  adalah " ;
+        equation = "15.Mula mula tinggi pohon "+h+" cm jika setiap hari pertumbuhannya 50% maka hari ke 5 tingginya  adalah " ;
         correctAnswer =Math.pow(1.5,4)*(h);
       }else if (i === 16) {
-        equation = "16.Tentukan x dari <br>&#8730;2x="+b+"&#8730;2+"+e+"&#8730;2   " ;
-        correctAnswer =Math.pow((b+e),2);
+        equation = "16.Tentukan x dari <br> x&#8730;2="+b+"&#8730;2+"+e+"&#8730;2   " ;
+        correctAnswer =b+e;
       }else if (i === 17) {
         equation = "17.&#8730(k+2) -x=0 jika nilai x = "+a+" maka k = ? " ;
         correctAnswer =Math.pow(a,2)-2;
+      }else if (i === 19) {
+        equation = "19.Tentukan x jika  log "+e+" + log "+a+"  = log x " ;
+        correctAnswer =a*e;
+      }else if (i === 20) {
+        equation = "20. Tentukan nilai x dari x= 10 log (<math><mfrac><mi><mn>10 <sup>"+f+"</sup></mn></mi><mi><mn>10<sup>"+b+"</sup></mn></mi></mfrac></math>)" ;
+        correctAnswer =(f-b)*10;
+      }else if (i === 21) {
+        equation = "21.Jika x&#178 - y&#178  = "+d+"  dan x - y = 2 maka x + y adalah  " ;
+        correctAnswer =d/2;
+      }else if (i === 22) {
+        equation = "22.Diberikan persamaam  y = x&#178 -("+a+")x -3= 0 maka jumlah akar2 nya adalah" ;
+        correctAnswer = a;
+      }else if (i === 23) {
+        equation = "23.Hasil perkalian akar dari: (x"+v+")(x"+w+")=0 adalah";
+        correctAnswer =w*v;
+      }else if (i === 24) {
+        equation = "24. Berapa besar "+k+"% dari "+e*100+"  " ;
+        correctAnswer = k*e;
+      }else if (i === 25) {
+        //  equation="25";
+         equation = "25. Tentukan nilai a dari a= <math><mfrac><mi><mn>"+a+"<sup>2</sup></mn></mi><mi><mn>4</mn></mi></mfrac></math>+<math><mfrac><mi><mn>"+(a+tp)+"<sup>2</sup></mn></mi><mi><mn>4</mn></mi></mfrac></math> +"+a+"  ";
+        correctAnswer = (a*a + Math.pow(a+tp,2) +4*a)/4;
+      }else if (i === 26) {
+        equation = "26.Tentukan x dari persamaan 8<sup>x</sup>=2<sup>2x-"+a+"</sup>";
+        correctAnswer =-a;
+      }else if (i === 27) {
+        equation = "27 . Fungsi eksponen berikut:  y=("+a+")<sup>x+1</sup>  akan memotong sumbu y = ?";
+        correctAnswer =a;
+      }else if (i === 28) {
+        equation = "28.Hitung nilai x dari "+c+"(x-2)=(x+2) " ;
+        correctAnswer =(+(2*c+2)/(c-1)).toFixed(1);
+      }else if (i === 29) {
+        equation = "29. Hitung  <mn>16</mn><sup>0</sup>+<mn>"+q+"</mn><sup><math><mfrac><mi><mn>3</mn></mi><mi><mn>2</mn></mi></mfrac></math></sup>" ;
+        correctAnswer =Math.pow(q,1.5)+1;
+      }else if (i === 30) {
+         equation = "30.Jika persamaan lingkaran adalah  x&#178 + y&#178  = "+q+"  , maka jari2 lingkarannya adalah  " ;
+        correctAnswer = parseFloat(Math.sqrt(q));
+      }else if (i === 31) {
+        equation = "31.Hitung nilai a dari a= <math><mfrac><mi><mn>"+a+"</mn></mi><mi><mn>5</mn></mi></mfrac></math> - <math><mfrac><mi><mn>"+c+"</mn></mi><mi><mn>5</mn></mi></mfrac></math> - <math><mfrac><mi><mn>"+b+"</mn></mi><mi><mn>5</mn></mi></mfrac></math> x 2" ;
+        correctAnswer =(a-c-2*b)/5;
+      }else if (i === 32) {
+        equation = "32.Berapa besar "+k+"% x  "+e*100+" + <math><mfrac><mi><mn>"+a+"</mn></mi><mi><mn>"+c+"</mn></mi></mfrac></math> x "+e*15+"  " ;
+        correctAnswer =a*e*15/c +k*e;
+      }else if (i === 33) {
+        equation = "33.Didalam sebuah kotak ada "+a+" buah kelereng biru dan "+c+" buah kelereng merah. Berapa % peluang memperoleh kelereng merah adalah  " ;
+        correctAnswer =parseInt((c*100)/(a+c));
+      }else if (i === 34) {
+        equation = "34.Bapak Budi memiliki  2 sepeda dan 3 motor. Jika bepergian ia memakai  salah satu topi dari 4 topi,  "+tp+"  diantaranya berwarna kuning. Berapa peluang bapak Budi pergi dengan  sepeda dan topi kuning ? (%)" ;
+        correctAnswer= 200*tp/20;
+      }else if (i === 35) {
+        equation = "35.Jika dari survey "+a+" dari "+sv+"   orang menyukai warna merah maka peluang (%) berjumpa orang yang memakai baju merah adalah "  ;
+        correctAnswer =a*100/sv;
+      }else if (i === 36) {
+     equation = "36.Didalam kotak terdapat "+e+" buah angka . Jika diambil sebanyak "+a+" angka maka jumlah angka yang terbentuk adalah  " ;
+        correctAnswer =faktorial(e)/faktorial(e-a);
+      }else if (i === 37) {
+        equation = "37.Diberikan data x:  "+a+","+f+" ,"+c+" ,"+e+" ,"+d+"   maka x rata rata adalah " ;
+        correctAnswer =((a+f+c+d+e)/5).toFixed(2);
+      }else if (i === 38) {
+        equation = "38.Diberikan data x yaitu   "+(e-2)+","+(e)+" ,"+(e-3)+" ,"+(e+a)+" ,"+(e+a+1)+" median x adalah  ";
+        correctAnswer =e;
+      }else if (i === 39) {
+        equation = "39.Diberikan data x yaitu   "+a+","+(a-1)+" ,"+a+" ,"+a+" ,"+(a+1)+" maka modus x  adalah   " ;
+        correctAnswer =a;
+      }else if (i === 40) {
+        equation = "40.Diberikan data x yaitu   "+a+","+f+" ,"+c+"  maka simpangan rata rata x adalah   " ;
+        correctAnswer = parseInt((
+     Math.abs(parseFloat(f-(a+f+c)/3))
+    +Math.abs(parseFloat(a-(f+f+c)/3))
+    +Math.abs(parseFloat(c-(a+f+c)/3)))/3);
+      }else if (i === 41) {
+        equation = "41.Dalan segitiga siku perbandingan sisi depan dengan sisi samping adalah 2 : 3. Dengan menggunakan sudut segitiga ini berapa tinggi pohon jika jarak pohon "+k+"   m.";
+        correctAnswer =(2/3)*k;
+      }else if (i === 42) {
+        equation = "42.Diberikan data x yaitu   "+a+","+f+" ,"+c+"  maka simpangan rata rata x adalah   " ;
+        correctAnswer =parseFloat(((a-((a+f+c)/3))+(f-((a+f+c)/3))+(c-((a+f+c)/3)))/3);
+      }else if (i === 43) {
+        equation = "43.Tentukan nilai a pada persamaan<br> a=("+a+")*("+b+"):("+c+")  " ;
+        correctAnswer =((a*b)/c);
+      }else if (i === 44) {
+        equation = "44.Tentukan nilai a pada persamaan<br> a=("+a+")/("+b+")x("+c+")  " ; ;
+        correctAnswer =a/b*c;
+      }else if (i === 45) {
+        equation = "45.a=("+a+")("+b+")("+c+")+("+d+")  " ;
+        correctAnswer =a*b*c+d;
+      }else if (i === 46) {
+        equation = "46.a= <mn>("+a+")</mn><sup>2</sup>+("+b+")" ;
+        correctAnswer =parseFloat(((a-((a+f+c)/3))+(f-((a+f+c)/3))+(c-((a+f+c)/3)))/3);
+      }else if (i === 47) {
+        equation = "47a= ("+b+" )*<mn>("+a+")</mn><sup>3</sup>+("+c+" )" ;
+        correctAnswer =parseFloat(((a-((a+f+c)/3))+(f-((a+f+c)/3))+(c-((a+f+c)/3)))/3);
+      }else if (i === 48) {
+        equation = "48.a= ("+b+" )*<mn>{("+a+")+("+c+" )}</mn><sup>3</sup>+("+c+" )" ;
+        correctAnswer =parseFloat(((a-((a+f+c)/3))+(f-((a+f+c)/3))+(c-((a+f+c)/3)))/3);
+      }else if (i === 49) {
+        equation = "49.a= ("+b+" )*<mn>{("+a+")+("+c+" )}</mn><sup>3</sup>+("+c+" )*("+c+")"  ;
+        correctAnswer =parseFloat(((a-((a+f+c)/3))+(f-((a+f+c)/3))+(c-((a+f+c)/3)))/3);
+      }else if (i === 50) {
+      equation = "50.a= ("+b+" )*<mn>{("+a+")+("+c+" )}</mn><sup>3</sup>+("+(c-1)+" )*("+c+")"  ;
+        correctAnswer =parseFloat(((a-((a+f+c)/3))+(f-((a+f+c)/3))+(c-((a+f+c)/3)))/3);
       }
       
       
       
       
       
-      
-      
-      
-      
-      
-      
-
-      var options = generateOptions(correctAnswer);
-
+ var options = generateOptions(correctAnswer);
       question.equation = equation;
       question.options = options;
       question.correctAnswer = correctAnswer;
-
       questions.push(question);
     }
 
@@ -123,11 +243,21 @@ var nValues = [-2,2,4,7];
     enableRadioButtons();
     
   }
-
-  function generateOptions(correctAnswer) {
+ //untuk menghasilkan angka -1  3
+  function generateRandomNumber() {
+            const numbers = [-2,-1,1,2,3];
+            const randomIndex = Math.floor(Math.random() * numbers.length);
+            const randomNumber = number0s[randomIndex];
+            document.getElementById('random-number').textContent = randomNumber;
+        }
+     function generateOptions(correctAnswer) {
+     const numbers = [-2,-1,1,2,3];
+            const randomIndex = Math.floor(Math.random() * numbers.length);
+            const randomNumber = numbers[randomIndex];
+    
     var options = [correctAnswer];
     while (options.length < 4) {
-      var randomOption = Math.floor(Math.random() * 8)+options[0]; // Generate random numbers near the correct answer
+      var randomOption = Math.floor(Math.random() * 4)+randomNumber+options[0]; // Generate random numbers near the correct answer
       if (!options.includes(randomOption)) {
         options.push(randomOption);
       }
@@ -136,6 +266,25 @@ var nValues = [-2,2,4,7];
     return options;
   }
 
+ 
+  function generateOptionsxx(correctAnswer) {
+    const numbers = [-2,-1,1,2];
+    const randomIndex = Math.floor(Math.random() * numbers.length);
+    const randomNumber = numbers[randomIndex];
+    var options = [correctAnswer];
+    while (options.length < 4) {
+      var randomOption =  options[0]; // Generate random numbers near the correct answer
+      if (!options.includes(randomOption)) {
+        options.push(randomOption);
+      }
+    }
+    shuffleArray(options);
+    return options;
+  }
+
+ 
+ 
+ 
   function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
@@ -144,7 +293,7 @@ var nValues = [-2,2,4,7];
       array[j] = temp;
     }
   }
-
+//<svg style="background-color:grey"> ${svg}</svg>
 function displayQuestions() {
     var container = document.getElementById("questions-container");
     container.innerHTML = "";
@@ -152,22 +301,27 @@ function displayQuestions() {
       var questionElement = document.createElement("div");
       questionElement.classList.add("question");
       questionElement.innerHTML = `
-        <p>${question.equation}</p>
-<form id="form${index}" style="padding:5px" >
+      <div style=" background-color:wheat " class="text-black bg-green-400 border-1 rounded-3xl box-border  border-black p-2  ">
+<p >${question.equation}</p>
+<form id="form${index}" style=" padding:5px" >
           ${question.options.map((option, i) => `
             <input type="radio" name="answer${index}" value="${i}">
             <label>${option}</label><br>
           `).join('')}
         </form>
-      `;
+     </div> `;
       container.appendChild(questionElement);
     });
+    
   }
 
   function clearQuestions() {
     questions = [];
+    
   }
 //jalan
+
+
   function checkAnswers() {
     var correctCount = 0;
     questions.forEach(function(question, index) {
@@ -184,40 +338,25 @@ function displayQuestions() {
 score0.innerHTML=correctCount;
 
 
-if (correctCount>=140){
-    var audio = new Audio('./vidio/suara1.mp3');
-    audio.play();
-  
+if (correctCount>=parseInt(localStorage.getItem('nilz')) ){localStorage.setItem("nilz",correctCount);}
 
-   // Cek apakah variabel nilai sudah ada di dalam localStorage
-            if(localStorage.getItem('nil0')) {
-                // Jika sudah ada, tambahkan nilai dengan 40
-                var nilai = parseInt(localStorage.getItem('nil0')) *0;
-                // Simpan nilai yang baru ke dalam localStorage
-                localStorage.setItem('nil0', 200);
-            } else {
-                // Jika variabel nilai belum ada, atur nilainya menjadi 0
-                localStorage.setItem('nil0', 0);
-            }
-juduln0.innerHTML=nil0;
-}
+    
+
 
 tombolcekoff();
-    disableRadioButtons();
+disableRadioButtons();
     
   }
+  
+  
 
   function disableRadioButtons() {
     var radioButtons = document.querySelectorAll('input[type="radio"]');
     radioButtons.forEach(function(radioButton) {
       radioButton.disabled = true;
       
-      
       }
-     
-      
-      
-      );
+     );
   }
 
   function enableRadioButtons() {
@@ -246,12 +385,43 @@ function tombolcekon() {
 
 function cekSkor() {
   var skor = document.getElementById("score0").value;
-  if (skor == 100) {
+  if (skor >= 100) {
     var audio = new Audio('./vidio/suara1.mp3');
     audio.play();
   }
-}  
+}
+  function hitungFaktorial() {
+            let angka = document.getElementById("angka").value;
+            angka = parseInt(angka);
+            if (isNaN(angka) || angka < 0) {
+                document.getElementById("hasil").innerHTML = "Silakan masukkan angka bulat non-negatif.";
+                return;
+            }
+            document.getElementById("hasil").innerHTML = "Faktorial dari " + angka + " adalah " + faktorial(angka);
+        }
 
+        function faktorial(n) {
+            if (n === 0 || n === 1) {
+                return 1;
+            }
+            return n * faktorial(n - 1);
+        }
+    //hp
+       
+
+    //hp
+    
+     function createSVG(a, b) {
+      return `<svg xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="50" x2="100" y2="50" stroke="black" />
+                <line x1="50" y1="0" x2="50" y2="100" stroke="black" />
+                <circle cx="${50 + a * 10}" cy="${50 - b * 10}" r="3" fill="red" />
+                <text x="${50 + a * 10}" y="${50 - b * 10 - 5}" font-size="12" text-anchor="middle">P(${a},${b})</text>
+              </svg>`;
+    }
+
+    
+    
 function kirimalj(){
     let poin=0;
       const jno3100=document.querySelector("#jno3100");
@@ -312,6 +482,8 @@ nilai3100.innerHTML=poin;
     
 }
 
+    
+    
 
 
 function kirim1() {
@@ -686,8 +858,8 @@ function kirim1() {
 
 
 localStorage.setItem("nil1",poin);
+juduln1.innerHTML=localStorage.getItem("nil1");
 
-juduln1.innerHTML=nil1;
 
 
 
@@ -777,19 +949,9 @@ juduln1.innerHTML=nil1;
   for (let i = 0; i < optionsno651.length; i++) {
       optionsno651[i].checked = false;
   }
-
-    
-
-  
 }
 
-function update1(){
 
-localStorage.setItem("nil1",poin);
-juduln1.innerHTML=nil1;
-
-
-}
 function kirim2() {
   let poin2 = 0;
   const jno101 = document.querySelector("#jno101");
@@ -884,7 +1046,7 @@ rno110.innerHTML = response;
 nilai2.innerHTML=poin2
 
 localStorage.setItem("nil2",poin2);
-juduln2.innerHTML=nil2;
+juduln2.innerHTML=localStorage.getItem("nil2");
 }
   
 
@@ -2140,9 +2302,100 @@ juduln7.innerHTML=nil7;
   
 function kirim8() {
   let poin8 = 0;
+  
+const jno21 = document.querySelector("#jno21");
+const jno22 = document.querySelector("#jno22");
+const jno23 = document.querySelector("#jno23");
+const jno24 = document.querySelector("#jno24");
+const jno25 = document.querySelector("#jno25");
+const jno26 = document.querySelector("#jno26");
+const jno27 = document.querySelector("#jno27");
+const jno28 = document.querySelector("#jno28");
+const jno29 = document.querySelector("#jno29");
+const jno30 = document.querySelector("#jno30");
+    
+  
   const nilai8=document.querySelector('#nilai8');
 
-
+  if (jno21.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno21.innerHTML = response;
+  
+    if (jno22.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno122.innerHTML = response;
+  
+    if (jno23.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno23.innerHTML = response;
+  
+    if (jno24.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno24.innerHTML = response;
+  
+    if (jno25.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno25.innerHTML = response;
+  
+    if (jno26.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno26.innerHTML = response;
+  
+    if (jno27.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno27.innerHTML = response;
+  
+    if (jno28.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno28.innerHTML = response;
+  
+    if (jno29.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno29.innerHTML = response;
+  
+    if (jno30.checked) {
+      response = "";
+      poin8 = poin8 + 10;
+    } else {
+      response = "";
+    }
+    rno30.innerHTML = response;
   
 nilai8.innerHTML=poin8;
 
@@ -2283,7 +2536,7 @@ function kirim10() {
   }
   rno600.innerHTML = response;
 
-  if (jno601.checked) {
+  if (jno601.checked) {0
     response = "";
     poin10 = poin10 + 10;
   } else {
@@ -2830,24 +3083,114 @@ response="ok";
     
     nilai12.innerHTML=poin;
     localStorage.setItem("nil12",poin);
-juduln12.innerHTML=nil12;
-      var now = new Date();
-  var datetime = now.toLocaleString();
+    
+    juduln12.innerHTML= localStorage.getItem("nil12");
+    
 
   // Insert date and time into HTML
-  document.getElementById("datetime").innerHTML = datetime;
+  
 }
 function kirim13() {
   let poin13 = 0;
   const nilai13=document.querySelector('#nilai13');
+ const jno121 = document.querySelector("#jno121");
+ 
+ const jno122 = document.querySelector("#jno122");
 
+  const jno123 = document.querySelector("#jno123");
 
+const jno124 = document.querySelector("#jno124");
+const jno125 = document.querySelector("#jno125");
+const jno126 = document.querySelector("#jno126");
+const jno127 = document.querySelector("#jno127");
+const jno128 = document.querySelector("#jno128");
+const jno129 = document.querySelector("#jno129");
+const jno130 = document.querySelector("#jno130");
+
+ if (jno121.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno121.innerHTML = response;
+
+ if (jno122.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno122.innerHTML = response;
+
+ if (jno123.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno123.innerHTML = response;
+    
+     if (jno124.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno124.innerHTML = response;
+    
+     if (jno125.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno125.innerHTML = response;
   
+   if (jno126.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno126.innerHTML = response;
+  
+    if (jno127.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno127.innerHTML = response; 
+    
+     if (jno128.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno128.innerHTML = response;
+    
+  if (jno129.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno129.innerHTML = response;
+ 
+  if (jno130.checked) {
+      response = "";
+      poin13 = poin13 + 10;
+    } else {
+      response = "";
+    }
+    rno130.innerHTML = response;
+    
+    
 nilai13.innerHTML=poin13;
-
-
-localStorage.setItem("nil3",poin3);
-juduln3.innerHTML=nil3;
+localStorage.setItem("nil13",poin13);
+juduln13.innerHTML=nil13;
 }
 
 
@@ -3630,13 +3973,159 @@ juduln16.innerHTML=nil16;
   let poin17 = 0;
   const nilai17=document.querySelector('#nilai17');
 
+const jno1701 = document.querySelector("#jno1701");
+    const jno1702 = document.querySelector("#jno1702");
+    const jno1703 = document.querySelector("#jno1703");
+    const jno1704 = document.querySelector("#jno1704");
+    const jno1705 = document.querySelector("#jno1705");
+    const jno1706 = document.querySelector("#jno1706");
+    const jno1707 = document.querySelector("#jno1707");
+    const jno1708 = document.querySelector("#jno1708");
+    const jno1709 = document.querySelector("#jno1709");
+    const jno1710 = document.querySelector("#jno1710");
+    const jno1711 = document.querySelector("#jno1711");
+    const jno1712 = document.querySelector("#jno1712");
+     const jno1713 = document.querySelector("#jno1713");
+    const jno1714 = document.querySelector("#jno1714");
+    const jno1715 = document.querySelector("#jno1715");
+    const jno1716 = document.querySelector("#jno1716");
+    
+    
+    
+     if (jno1701.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1701.innerHTML = response;
+    
+    if (jno1702.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1702.innerHTML = response;
+    if (jno1703.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1703.innerHTML = response;
+    if (jno1704.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1704.innerHTML = response;
+    if (jno1705.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1705.innerHTML = response;
+    if (jno1706.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1706.innerHTML = response;
+    if (jno1707.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1707.innerHTML = response;
+    
+    if (jno1708.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1708.innerHTML = response;
+    
+    if (jno1709.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1709.innerHTML = response;
+    
+if (jno1710.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1710.innerHTML = response;
+    
 
+if (jno1711.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1711.innerHTML = response;
   
+  
+if (jno1712.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1712.innerHTML = response;
+  
+  
+if (jno1713.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1713.innerHTML = response;
+    
+    
+if (jno1714.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1714.innerHTML = response;
+    
+    
+if (jno1715.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1715.innerHTML = response;
+    
+if (jno1716.checked) {
+      response = "";
+      poin17 = poin17 + 10;
+    } else {
+      response = "";
+    }
+    rno1716.innerHTML = response;
+    
 nilai17.innerHTML=poin17;
 
 
 localStorage.setItem("nil17",poin17);
 juduln17.innerHTML=nil17;
+
 }
 
 
@@ -3644,10 +4133,100 @@ juduln17.innerHTML=nil17;
   let poin18 = 0;
   const nilai18=document.querySelector('#nilai18');
 
+const jno1801 = document.querySelector("#jno1801");
+    const jno1802 = document.querySelector("#jno1802");
+    const jno1803 = document.querySelector("#jno1803");
+    const jno1804 = document.querySelector("#jno1804");
+    const jno1805 = document.querySelector("#jno1805");
+    const jno1806 = document.querySelector("#jno1806");
+     const jno1807 = document.querySelector("#jno1807");
+    const jno1808 = document.querySelector("#jno1808");
+    const jno1809 = document.querySelector("#jno1809");
+    const jno1810 = document.querySelector("#jno1810");
+    
+    
+     if (jno1801.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1801.innerHTML = response;
+    
+    if (jno1802.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1802.innerHTML = response;
+    if (jno1803.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1803.innerHTML = response;
+    if (jno1804.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1804.innerHTML = response;
+    if (jno1805.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1805.innerHTML = response;
+    if (jno1806.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1806.innerHTML = response;
+    
+     if (jno1807.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1807.innerHTML = response;
+    
+    if (jno1808.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1808.innerHTML = response;
+    if (jno1809.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1809.innerHTML = response;
+    if (jno1810.checked) {
+      response = "";
+      poin18 = poin18 + 10;
+    } else {
+      response = "";
+    }
+    rno1810.innerHTML = response;
+
+    
+
 
   
 nilai18.innerHTML=poin18;
 
+
+  
 
 localStorage.setItem("nil18",poin18);
 juduln18.innerHTML=nil18;
