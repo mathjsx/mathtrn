@@ -39,64 +39,7 @@ document.getElementById('nameForm').addEventListener('submit', function(event) {
 
 
 
-        document.gdocument.getElementById('nameForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            localStorage.setItem('name', name);
-            document.getElementById('response').innerText = `Nama ${name} disimpan di LocalStorage.`;
-        });
-
-        document.getElementById('sendToServer').addEventListener('click', async function() {
-            const name = localStorage.getItem('name');
-            if (!name) {
-                document.getElementById('response').innerText = 'Tidak ada nama di LocalStorage.';
-                return;
-            }
-
-            const response = await fetch('/api/save-name', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name: name })
-            });
-
-            const result = await response.json();
-            document.getElementById('response').innerText = result.message;
-        });
-
-        document.getElementById('showName').addEventListener('click', async function() {
-            const response = await fetch('/api/get-name');
-            const result = await response.json();
-            document.getElementById('response').innerText = result.message;
-        });etElementById('nameForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            localStorage.setItem('name', name);
-            document.getElementById('response').innerText = `Nama ${name} disimpan di LocalStorage.`;
-        });
-
-        document.getElementById('sendToServer').addEventListener('click', async function() {
-            const name = localStorage.getItem('name');
-            if (!name) {
-                document.getElementById('response').innerText = 'Tidak ada nama di LocalStorage.';
-                return;
-            }
-
-            const response = await fetch('/api/save-name', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name: name })
-            });
-
-            const result = await response.json();
-            document.getElementById('response').innerText = result.message;
-        });
-   
-
- 
+        
 
  function generateQuestionsA() {
     clearQuestions();
