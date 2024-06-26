@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class=" h-full ">
 <head>
@@ -12,7 +13,7 @@
 <script src="https://unpkg.com/feather-icons"></script>
 
 <script src="./js/index.js"></script> 
-<script src="/kirim.js"></script>
+<script src="./src/kirim.js"></script>
 
 
 <script src="https://cdn.tailwindcss.com"></script> 
@@ -41,8 +42,16 @@ tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
 }
 </script>
 
-
-  
+ 
+   <style>
+        .progress-container {
+            margin-bottom: 20px;
+        }
+        .progress-circle {
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
 
 <style>
   #more {display: none;}
@@ -253,32 +262,15 @@ localStorage.setItem('nil0',0);
  
 </head>
 <body onload="refresh()" >
+
+<svg width="50px" height="50px" viewBox="-92.16 -92.16 1208.32 1208.32" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#00ffff" transform="matrix(1, 0, 0, -1, 0, 0)rotate(180)" stroke="#00ffff" stroke-width="8.192"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M432 768h208v32H432v104c0 9.6-6.4 16-16 16s-16-6.4-16-16V672c0-9.6 6.4-16 16-16s16 6.4 16 16v96z m96-416c9.6 0 16 6.4 16 16s-6.4 16-16 16H336c-9.6 0-16-6.4-16-16s6.4-16 16-16h192z m352 0c9.6 0 16 6.4 16 16s-6.4 16-16 16h-96c-9.6 0-16-6.4-16-16s6.4-16 16-16h96zM624 160c0-9.6 6.4-16 16-16s16 6.4 16 16v112c0 9.6-6.4 16-16 16s-16-6.4-16-16v-112z m-67.2 102.4c6.4 6.4 6.4 16 0 22.4-6.4 6.4-16 6.4-22.4 0l-67.2-67.2c-6.4-6.4-6.4-16 0-22.4 6.4-6.4 16-6.4 22.4 0l67.2 67.2z m24 182.4c6.4-6.4 16-4.8 22.4 1.6 6.4 6.4 4.8 16-1.6 22.4l-432 392c-6.4 6.4-16 4.8-22.4-1.6s-4.8-16 1.6-22.4l432-392z m-169.6 136l-22.4 22.4-96-96 22.4-22.4 96 96zM640 112c9.6 0 16 6.4 16 16s-6.4 16-16 16h-96c-9.6 0-16-6.4-16-16s6.4-16 16-16h96z" fill="#050D42"></path><path d="M640 528c-88 0-160-72-160-160s72-160 160-160 160 72 160 160-72 160-160 160zM160 880c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z m400-64c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z m80 0c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z m-224 0c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z m0 112c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z m83.2-745.6c12.8 12.8 12.8 32 0 44.8-12.8 12.8-32 12.8-44.8 0-12.8-12.8-12.8-32 0-44.8 12.8-12.8 33.6-12.8 44.8 0zM416 704c-44.8 0-80-35.2-80-80s35.2-80 80-80 80 35.2 80 80-35.2 80-80 80z m224-544c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32zM320 400c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z m-16 128c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z m-24 240c-17.6 0-32-14.4-32-32s14.4-32 32-32 32 14.4 32 32-14.4 32-32 32z" fill="#2F4BFF"></path></g></svg>
    
 <audio controls id="backgroundMusic"></audio>
-<div class ="text-sm" >for smartphone, update 26/06/24 .Jumlah pengunjung:
+<div class ="text-sm" >for smartphone, update 26/06/24 19:15 WIB .Jumlah pengunjung:
 
 <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/814511/t/5">
 </script>
 </div>
- <h1>Simpan Nama</h1>
-  <h1>Simpan Nama</h1>
-    <form id="nameForm">
-        <label for="name">Nama:</label>
-        <input type="text" id="name" name="name" required>
-        <button type="submit">Simpan ke LocalStorage</button>
-    </form>
-    <button id="sendToServer">Kirim ke Server</button>
-    <button id="showName">Lihat Nama</button>
-    <div id="response"></div>
-
-    <!--
-        <label for="name">Nama:</label>
-        <input type="text" id="name" name="name" required>
-        <button type="submit">Simpan ke LocalStorage</button>
-    </form>
-    <button id="sendToServer">Kirim ke Server</button>
-    -->
-
   <!--
 <iframe padding="20px" width=100% height="300"  src="https://docs.google.com/document/d/1DpmBChpUPtMC4eW0yN9iqmJler5ce84ETmTTsxlzPsk/edit?usp=dr23ivesdk"</iframe>
  -->
@@ -692,9 +684,13 @@ localStorage.setItem('nil0',0);
         <td class="border px-4 py-1 bg-blue-300 text-black custom-col-width"> 20.Integral</td>
         <td class="border px-4 py-1 bg-blue-300 custom-col-width2" id="nila16"></td>
       </tr>
-        
+        <tr>
      <td class="border px-4 py-2 bg-green-700 custom-col-widthskore  font-italic" i>Penalaran MTK</td>
+     
     <td class="border px-4 py-1 bg-green-700 custom-col-width2" id="nila0"></td>
+    
+    
+    
   </tr>
      <tr>
 <td class="border px-4 py-2 bg-green-700 custom-col-width  font-italic">Total kelas x</td>
@@ -725,7 +721,24 @@ localStorage.setItem('nil0',0);
   </table>
   <button class="py-2 px-6 bg-sky-700 text-2xl  text-black rounded-2xl" onClick="calculate()">Refresh </button>
   
+  
+  
+  <div id="babana" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border border-black p-4 text-slate-700 bg-[#DCDCDC] ">
+ <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">PROGRESS </h1>
+  <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress0" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+  
+
+<div id="progressRange" disabled  value="0" oninput="updateProgress(this.value)">penalaran MTK</div> 
+
+ </div>
   </header>  
+  
+  
 
   <div class="hidden h-full bg-green-100  p-2 grid grid-cols-2 gap-2 md:grid-cols-4">
   <div class="h-auto bg-green-600 aspect-[4/3] md:aspect-[3/4] xl:-[4/3] rounded-lg">
@@ -1070,7 +1083,17 @@ Jika deskripsi ini akurat, matematika tidak dapat menarik orang yang cerdas. Ini
 <!-- batas aljabar -->
   <div  id="bab1" class= "border-1 rounded-3xl box-border border-black p-4 text-black bg-white">
 <h1 class="text-2xl font-bold text-black ">Bilangan Berpangkat (X)</h1>
+
+ <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress1" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
 <span id="dots1">...</span>
+
+
 
     <div id="more1">
 <p class="font-semibold">soal 1</p>
@@ -2936,7 +2959,17 @@ Tentukan nilai logaritma berikut ini  <label>$$\log_55+2\log_55=...$$</label><br
 <h2 class="text-2xl" > Sistem Persamaan Linier
 Dua dan Tiga Variabel</h2 >
 
+<div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress2" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+    
 
+<svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="50" font-family="Verdana" font-size="20" fill="black">SPLTV</text>
+</svg>
  <svg width="35" height="35" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
     <!-- Latar belakang putih -->
     <rect width="10" height="10" fill="red"/>
@@ -2955,6 +2988,8 @@ Dua dan Tiga Variabel</h2 >
     <text x="0.5" y="0.5" font-size="0.5" fill="black">B</text>
     <text x="0.1" y="7.5" font-size="0.5" fill="black">C</text>
     <text x="4.1" y="7.1" font-size="0.5" fill="black">A</text>
+    
+    
 </svg>
 
 <span id="dots2">...</span>
@@ -3365,7 +3400,12 @@ nilai z adalah
 <div  id="bab3" class=" text-black bg-gradient-to-r from-yellow-100 to-blue-400  border-1 rounded-3xl box-border  border-black p-4  text-slate-700 bg-[#98FB98]">
 
   <h2 class="text-2xl" >Sistem Pertidaksamaan Linier</h2>Himpunan penyelesaian
-   
+   <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress3" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
  <svg width="35" height="35" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
     <!-- Latar belakang putih -->
     <rect width="10" height="10" fill="blue"/>
@@ -4222,7 +4262,16 @@ x> 0;y> 0\\
 <div id="bab4" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border  border-black p-4  text-slate-700 bg-green-100">
 
 <h2 >PROGRAM LINIER</h2>
-
+<div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress4" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+    
+<svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="50" font-family="Verdana" font-size="30" fill="black">Hello ?</text>
+</svg>
  <svg width="35" height="35" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
     <!-- Latar belakang putih -->
     <rect width="10" height="10" fill="red"/>
@@ -4581,7 +4630,12 @@ jika z=2x+3y adalah
 
 <h2>Barisan & Deret</h2>
 <span id="dots5">...</span>
-
+<div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress5" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
  <svg width="35" height="35" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
     <!-- Latar belakang putih -->
     <rect width="10" height="10" fill="red"/>
@@ -4783,7 +4837,13 @@ nilai <label>$$S_{10}$$</label> adalah
 
 <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">Persamaan dan Fungsi Exponen (X)</h1>
 
-   
+    <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress10" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
  <svg width="35" height="35" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
     <!-- Latar belakang putih -->
     <rect width="10" height="10" fill="red"/>
@@ -5239,7 +5299,12 @@ maka nilai f(2) <br>
 <div id="bab6" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border  border-black p-4 text-black bg-[#FFEBCD] ">
   
   <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">Trigonometri (X) </h1>
-   
+   <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress6" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
  <svg width="35" height="35" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
     <!-- Latar belakang putih -->
     <rect width="10" height="10" fill="red"/>
@@ -6072,7 +6137,13 @@ jika sudut 90 derajat diubah ke radian menjadi</label><br>
 <!--batas -->
 <div id="bab21" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border  border-black p-4  text-slate-800 bg-[#BDAAFD]">
 <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">Aritmatika Sosial (XI)</h1>
-   
+    <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress21" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
 Penerapan barisan dan deret aritmatika/geometri adalah menghitung dan mengelola keuangan yakni: 
   <br>1.Pinjaman.<br>2.Investasi.<br>3.Anuitas.<br>
   
@@ -6221,7 +6292,13 @@ $A=H\frac{1}{ \sum_{n=1}^{n} \frac{1}{(1+i)^n}}$
 <!-- batas awal bab7 -->
   <div id="bab7" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border border-black p-4 text-slate-700 bg-[#DCDCDC] ">
  <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">Matrik(XI) </h1>
- 
+  <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress7" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
  <svg width="35" height="35" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
     <!-- Latar belakang putih -->
     <rect width="10" height="10" fill="red"/>
@@ -9366,7 +9443,13 @@ jika C=A-2B maka C adalah
 <div id="bab8" class="border-1 rounded-3xl box-border border-black p-4 text-slate-700  bg-[#F5F5DC]">
  
   <h1 >Vektor </h1> 
- 
+  <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress8" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
  <svg width="35" height="35" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
     <!-- Latar belakang putih -->
     <rect width="10" height="10" fill="red"/>
@@ -9988,14 +10071,20 @@ jika C=A-2B maka C adalah
 <!-- batas vektor -->
   
  
-  <div  id="bab9" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border  border-black p-4  text-slate-700 bg-gradient-to-r from-slate-100 to-blue-100">
+  <div  id="bab9" class="border-1 rounded-3xl box-border  border-black p-4  text-black bg-gradient-to-r from-slate-100 to-blue-300">
 
 
 
 <h2 class=" text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">
   Persamaan dan Fungsi Kuadrat </h2>
 
-  
+   <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress9" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
  <svg width="35" height="35"  viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
     <!-- Latar belakang putih -->
     <rect width="10" height="10" fill="red"/>
@@ -10016,6 +10105,209 @@ jika C=A-2B maka C adalah
     <text x="4.1" y="7.1" font-size="0.5" fill="black">A</text>
 </svg>
 
+Persamaan kuadrat adalah sebuah persamaan matematika yang memiliki bentuk umum \( ax^2 + bx + c = 0 \), di mana \( a \), \( b \), dan \( c \) adalah konstanta, dan \( x \) adalah variabel. Persamaan kuadrat biasanya diselesaikan menggunakan rumus kuadratik:
+
+\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+
+Persamaan ini memberikan dua solusi untuk nilai \( x \), yaitu \( x_1 \) dan \( x_2 \), yang bisa berbentuk bilangan riil atau kompleks, tergantung pada diskriminan \( b^2 - 4ac \).
+
+
+
+Berikut adalah kode SVG untuk grafik persamaan kuadrat dengan a=1, b=-6, dan c=1, dengan garis simetri terhadap sumbu y yang besar skala y-nya adalah dua kali skala x:
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+    <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="1" />
+    <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="1" />
+    
+    <path d="M0,73 C30,73 70,27 100,27 C130,27 170,73 200,73" fill="none" stroke="black" stroke-width="2" />
+    
+    <circle cx="5" cy="95" r="2" fill="red" />
+    <text x="10" y="90" font-size="10" fill="red">A</text>
+    
+    <circle cx="195" cy="95" r="2" fill="red" />
+    <text x="180" y="90" font-size="10" fill="red">B</text>
+    
+    <line x1="100" y1="0" x2="100" y2="200" stroke="blue" stroke-width="2" />
+</svg>
+```
+
+Dalam kode SVG di atas, grafik persamaan kuadrat ditampilkan dengan garis simetri berwarna biru terhadap sumbu y. Titik A dan B menunjukkan titik potong grafik dengan sumbu x. Semua elemen disesuaikan dengan ukuran 200 x 200 px dan viewBox 0 0 200 200.
+
+Berikut adalah kode SVG untuk grafik persamaan kuadrat dengan a=1, b=-6 dan c=1:
+Berikut adalah kode SVG untuk grafik persamaan kuadrat dengan a=1, b=-6, dan c=1:
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+    <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="1" />
+    <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="1" />
+    
+    <path d="M0,73 C30,73 70,27 100,27 C130,27 170,73 200,73" fill="none" stroke="black" stroke-width="2" />
+    
+    <circle cx="5" cy="95" r="2" fill="red" />
+    <text x="10" y="90" font-size="10" fill="red">A</text>
+    
+    <circle cx="195" cy="95" r="2" fill="red" />
+    <text x="180" y="90" font-size="10" fill="red">B</text>
+    
+    <line x1="0" y1="73" x2="200" y2="73" stroke="blue" stroke-width="2" />
+</svg>
+```
+
+Dalam kode SVG di atas, garis biru menunjukkan garis simetri dengan besar skala y yang merupakan dua kali skala x. Titik A dan B menunjukkan titik potong grafik dengan sumbu x. Semua elemen disesuaikan dengan ukuran 200 x 200 px dan viewBox 0 0 200 200.
+`
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Garis sumbu x -->
+  <line x1="0" y1="100" x2="200" y2="100" stroke="black" />
+  <!-- Garis sumbu y -->
+  <line x1="100" y1="0" x2="100" y2="200" stroke="black" />
+  
+  <!-- Grafik persamaan kuadrat -->
+  <path d="M0,199 Q100,-5 200,199" fill="none" stroke="red" />
+  
+  <!-- Titik potong A -->
+  <circle cx="5" cy="99" r="3" fill="green" />
+  <text x="10" y="105" fill="black">A</text>
+  
+  <!-- Titik potong B -->
+  <circle cx="195" cy="99" r="3" fill="green" />
+  <text x="190" y="105" fill="black">B</text>
+  
+  <!-- Garis simetrik -->
+  <line x1="50" y1="0" x2="150" y2="200" stroke="blue" />
+</svg>
+```
+
+Kode di atas akan membuat grafik persamaan kuadrat pada sebuah SVG dengan ukuran 200 x 200 px dan viewBox 0 0 200 200. Garis sumbu x dan y ditampilkan dalam warna hitam. Grafik persamaan kuadrat ditampilkan dalam warna merah. Titik potong A dan B ditandai dengan titik hijau dan label A dan B, sedangkan garis simetris ditampilkan dalam warna biru.
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Garis sumbu x -->
+  <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="1" />
+
+  <!-- Garis sumbu y -->
+  <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="1" />
+
+  <!-- Grafik persamaan kuadrat -->
+  <path d="M0,100 L100,0 L200,100" stroke="blue" fill="none" />
+
+  <!-- Titik potong A -->
+  <circle cx="1" cy="99" r="2" fill="red" />
+
+  <!-- Titik potong B -->
+  <circle cx="5" cy="95" r="2" fill="red" />
+</svg>
+
+<svg width="200" height="200" viewBox="0 0 200 200">
+
+  <line x1="0" y1="100" x2="200" y1="100" stroke="black" stroke-width="2" />
+  <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="2" />
+
+  <text x="5" y="15" font-size="8">0</text>
+  <text x="195" y="15" font-size="8">10</text>
+  <text x="15" y="195" font-size="8">10</text>
+  <text x="195" y="195" font-size="8">0</text>
+
+  <path d="M 0,100 Q 100,60 200,100" stroke="blue" stroke-width="2" fill="none" />
+
+  <circle cx="23" cy="100" r="2" stroke="red" fill="red" /> <circle cx="177" cy="100" r="2" stroke="red" fill="red" /> <line x1="100" y1="0" x2="100" y2="200" stroke="blue" stroke-width="1" stroke-dasharray="5 5" />
+
+</svg>
+
+
+Kode SVG Grafik Persamaan Kuadrat dengan Titik Potong X dan Garis Simetrik
+Berikut adalah kode SVG untuk grafik persamaan kuadrat dengan a = 1, b = -6, dan c = 1, dengan ukuran 200 x 200 piksel, viewBox 0 0 200 200, titik potong sumbu X (A dan B), dan garis simetrik berwarna biru:
+<svg width="200" height="200" viewBox="0 0 200 200">
+
+  <line x1="0" y1="100" x2="200" y1="100" stroke="black" stroke-width="2" />
+  <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="2" />
+
+  <text x="5" y="15" font-size="8">0</text>
+  <text x="195" y="15" font-size="8">10</text>
+  <text x="15" y="195" font-size="8">10</text>
+  <text x="195" y="195" font-size="8">0</text>
+
+  <path d="M 0,100 Q 100,60 200,100" stroke="blue" stroke-width="2" fill="none" />
+
+  <circle cx="23" cy="100" r="2" stroke="red" fill="red" /> <circle cx="177" cy="100" r="2" stroke="red" fill="red" /> <line x1="100" y1="0" x2="100" y2="200" stroke="blue" stroke-width="1" stroke-dasharray="5 5" />
+
+</svg>
+
+Penjelasan:
+ * Kode SVG: Kode ini mendefinisikan elemen SVG yang akan dirender di browser.
+ * Ukuran: Atribut width dan height menentukan ukuran grafik dalam piksel. Atribut viewBox menentukan area pandang grafik.
+ * Garis Koordinat: Garis hitam tebal ditarik untuk mewakili sumbu X dan Y.
+ * Skala: Teks kecil ditambahkan di sudut-sudut grafik untuk menunjukkan skala.
+ * Grafik Fungsi Kuadrat: Jalur biru digambar untuk mewakili grafik fungsi kuadrat y = ax^2 + bx + c dengan a = 1, b = -6, dan c = 1.
+ * Titik Potong Sumbu X: Lingkaran merah kecil digambar di titik-titik di mana grafik memotong sumbu X. Titik A terletak di (23, 100) dan titik B terletak di (177, 100).
+ * Garis Simetrik: Garis biru putus-putus ditarik melalui titik puncak grafik, yang merupakan garis simetrik dari parabola. Garis simetrik ini bertepatan dengan sumbu Y karena a = 1.
+Catatan:
+ * Anda dapat mengubah nilai a, b, dan c untuk mendapatkan grafik fungsi kuadrat yang berbeda.
+ * Anda dapat mengubah warna, gaya, dan ketebalan garis dan bentuk sesuai keinginan.
+ * Anda dapat menambahkan label untuk sumbu X dan Y dan judul untuk grafik.
+
+
+
+<svg width="100" height="100" viewBox="0 0 100 100">
+
+  <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2" />
+  <line x1="50" y1="0" x2="50" y2="100" stroke="black" stroke-width="2" />
+
+  <text x="5" y="5" font-size="8">0</text>
+  <text x="95" y="5" font-size="8">10</text>
+  <text x="5" y="95" font-size="8">10</text>
+  <text x="95" y="95" font-size="8">0</text>
+
+  <path d="M 0,50 Q 50,30 100,50" stroke="blue" stroke-width="2" fill="none" />
+
+  <circle cx="3" cy="50" r="2" stroke="red" fill="red" />
+  <circle cx="97" cy="50" r="2" stroke="red" fill="red" />
+
+  <line x1="50" y1="0" x2="50" y2="100" stroke="blue" stroke-width="1" stroke-dasharray="5 5" />
+
+</svg>
+
+<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="white" />
+  
+  <!-- Axes -->
+  <line x1="0" y1="50" x2="100" y2="50" stroke="black" />
+  <line x1="50" y1="0" x2="50" y2="100" stroke="black" />
+  
+  <!-- X-axis labels -->
+  <text x="95" y="55" font-family="Arial" font-size="2">X</text>
+  <text x="55" y="5" font-family="Arial" font-size="2">Y</text>
+  
+  <!-- Quadratic curve -->
+  <path d="M 0 61 Q 25 16, 50 1 Q 75 16, 100 61" stroke="blue" fill="none" />
+  
+  <!-- Axis of Symmetry -->
+  <line x1="50" y1="0" x2="50" y2="100" stroke="blue" stroke-dasharray="2,2" />
+  
+  <!-- Intersection points with X-axis -->
+  <circle cx="11.74" cy="50" r="1" fill="red" />
+  <text x="13" y="49" font-family="Arial" font-size="2">(0.17, 0)</text>
+  
+  <circle cx="88.26" cy="50" r="1" fill="red" />
+  <text x="85" y="49" font-family="Arial" font-size="2">(5.83, 0)</text>
+</svg>
+<svg width="200" height="200" viewBox="0 0 100 100">
+
+  <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2" />
+  <line x1="50" y1="0" x2="50" y2="100" stroke="black" stroke-width="2" />
+
+  <text x="5" y="5" font-size="8">0</text>
+  <text x="95" y="5" font-size="8">10</text>
+  <text x="5" y="95" font-size="8">10</text>
+  <text x="95" y="95" font-size="8">0</text>
+
+  <path d="M 0,50 Q 50,30 100,50" stroke="blue" stroke-width="2" fill="none" />
+
+  <circle cx="3" cy="50" r="2" stroke="red" fill="red" />
+  <circle cx="97" cy="50" r="2" stroke="red" fill="red" />
+
+  <line x1="50" y1="0" x2="50" y2="100" stroke="blue" stroke-width="1" stroke-dasharray="5 5" />
+
+</svg>
 
 
   <span id="dots9">...</span>
@@ -10908,6 +11200,13 @@ terhadap sumbu y adalah
 <div id="bab11" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border  border-black p-4  text-slate-700 bg-[#FFE4E1]">
   <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">Fungsi Komposisi dan Invers fungsi  (XI) </h1>
  
+  <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress11" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
 <span id="dots11">...</span>
     <div id="more11">
 <p>
@@ -11330,12 +11629,21 @@ $g(x) = ...$</p>
 <!-- batas akhir 8 -->
 
 
+ 
+
+
 <div id="bab19" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border  border-black p-4  text-slate-800 bg-[#BDAAFD]">
 
  
 
   <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">Transformasi Geometri  (XI) </h1>
-  
+   <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress19" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
   Transformasi = perubahan ; geometri : hal yang berhubungan dengan titik , sudut, garis , bidang, ruang. Transformasi geometri 
   dapat diartikan sebagai perubahan kedudukan suatu titik pada koordinat Cartesius.<br>
   Jenisnya:
@@ -11892,7 +12200,13 @@ text-black bg-green-100">
 
 
   <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">Persamaan Lingkaran(XI) </h1>
-  
+   <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress12" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
 <span id="dots12">...</span>
     <div id="more12">
 <hr>
@@ -12331,7 +12645,13 @@ Cek Nilai Persamaan Lingkaran</button>
 <div id="bab13" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border  border-black p-4  text-slate-700 bg-[#D8BFD8]">
 
 <h2>Logika Matematika</h2>
- 
+  <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress13" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
 <span id="dots13">...</span>
     <div id="more13">
 
@@ -12690,7 +13010,13 @@ maka penarikan kesimpulan cara diatas
 <div id="bab14" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border  border-black p-4  text-slate-700 bg-[#FFE4B5]">
 
   <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">Limit Fungsi Aljabar (XII) </h1>
-   
+    <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress14" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
 <span id="dots14">...</span>
     <!-- <img class=" max-w-none h-auto w-50% " src='gbr/ttentu.jpg'> -->
     <div id="more14">
@@ -13397,6 +13723,12 @@ $\lim\limits_{x \to a} \frac {f(x)} {g(x)}=\lim\limits_{x \to a} (\frac {f'(x)} 
 <div id="bab15" class="dark:bg-slate-700 dark:text-slate-100 border-1 rounded-3xl box-border  border-black p-4  text-slate-700 bg-[#FFA07A]">
 
     <h1 class="text-2xl font-bold tracking-tight text-sky-600 sm:text-4xl">Deferensial/Turunan(XII)</h1>
+ <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress15" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
 
 <span id="dots15">...</span>
     <div id="more15">
@@ -14335,7 +14667,13 @@ turun<br>
 
   
   <h1 class=" font-bold text-2xl">Integral (XII) </h1>
-   
+    <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress16" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
 
 Integral adalah kebalikan  dari deferensial atau disebut 
 juga antiderivat. Jika f(x)  diturunkan terhadap x dapat dinyatakan dengan d/dx(f(x)). 
@@ -15036,6 +15374,13 @@ $$\lim\limits_{x \to \sim} \sqrt {x^3 + 3x - 1}  - \sqrt {x^3 -x + 1}=...$$
    
   
   <div class="text-2xl" >Peluang </div>
+   <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress17" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
+
   Peluang adalah ukuran dari seberapa mungkin suatu kejadian akan terjadi, dinyatakan sebagai rasio antara jumlah kejadian yang diinginkan dengan jumlah total kemungkinan kejadian. Ini sering diukur sebagai pecahan antara 0 (tidak mungkin) dan 1 (pasti terjadi). 
     
       <span id="dots17">...</span>
@@ -15399,6 +15744,12 @@ Jadi, ada 10 cara yang berbeda untuk memilih 2 apel dari 5 apel yang tersedia.
    
 
 <h2 >Statistik </h2>
+ <div class="progress-container">
+        <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="10" fill="none" />
+            <circle class="progress-circle" id="progress18" cx="50" cy="50" r="45" stroke="#4caf50" stroke-width="10" fill="none" stroke-dasharray="283" stroke-dashoffset="283" />
+        </svg>
+    </div>
 
 Statistik adalah angka-angka yang dikumpulkan, dikelompkkan 
 atau ditabelkan sehingga didapat informasi terhadap masalah tertentu.
@@ -18398,6 +18749,144 @@ function toggleContent() {
         }
 
         document.getElementById("deviceInfo").innerText = "" + getDeviceInfo();
+    </script>
+    
+    <script>
+        // Fungsi untuk memperbarui progress bar
+        function updateProgress(circleId, value) {
+            const circle = document.getElementById(circleId);
+            const radius = circle.r.baseVal.value;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (value / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+        }
+
+        // Fungsi untuk memuat nilai progress dari localStorage
+        function loadProgress() {
+            const nilz = localStorage.getItem('nilz') || 25;
+            const nil1 = localStorage.getItem('nil1') || 30;
+            const nil2 = localStorage.getItem('nil2') || 25;
+            const nil3 = localStorage.getItem('nil3') || 30;
+            const nil4 = localStorage.getItem('nil4') || 30;
+            const nil5 = localStorage.getItem('nil5') || 25;
+            const nil6 = localStorage.getItem('nil6') || 30;
+            
+            const nil7 = localStorage.getItem('nil7') || 25;
+            const nil8 = localStorage.getItem('nil8') || 30;
+            const nil9 = localStorage.getItem('nil9') || 25;
+            const nil10 = localStorage.getItem('nil10') || 30;
+            const nil11 = localStorage.getItem('nil11') || 30;
+            const nil12 = localStorage.getItem('nil12') || 25;
+            const nil13 = localStorage.getItem('nil13') || 30;
+            const nil14 = localStorage.getItem('nil14') || 30;
+            const nil15 = localStorage.getItem('nil15') || 25;
+            const nil16 = localStorage.getItem('nil16') || 30;
+            const nil17 = localStorage.getItem('nil17') || 30;
+            const nil18 = localStorage.getItem('nil18') || 25;
+            const nil19 = localStorage.getItem('nil19') || 30;
+            const nil20 = localStorage.getItem('nil20') || 30;
+            const nil21 = localStorage.getItem('nil21') || 25;
+            const nil22 = localStorage.getItem('nil22') || 30;
+            const nil23 = localStorage.getItem('nil23') || 30;
+          
+            
+            
+            
+            
+            
+            const score0 = nilz;
+            const score1 = nil1  
+            const score2 = nil2;
+            const score3 = nil3;
+            const score4 = nil4;
+            const score5 = nil5;
+            const score6 = nil6;
+            const score7 = nil7;
+            const score8 = nil8;
+            const score9 = nil9;
+            const score10 = nil10;
+            const score11 = nil11;
+            const score12 = nil12;
+            const score13 = nil13;
+            const score14 = nil14;
+            const score15 = nil15;
+            const score16 = nil16;
+            const score17 = nil17;
+            const score18 = nil18;
+            const score19 = nil19;
+            const score20 = nil20;
+            const score21 = nil21;
+            const score22 = nil22;
+            const score23 = nil23;
+           
+         
+         
+         
+         
+         
+            updateProgress('progress0', score0);
+            updateProgress('progress1', score1);
+            updateProgress('progress2', score2);
+            updateProgress('progress3', score3);
+            updateProgress('progress4', score4);
+            updateProgress('progress5', score5);
+            updateProgress('progress6', score6);
+           updateProgress('progress7', score7);
+            updateProgress('progress8', score8);
+            updateProgress('progress9', score9);
+            updateProgress('progress10', score10);
+            updateProgress('progress11', score11);
+            updateProgress('progress12', score12);
+            updateProgress('progress13', score13);
+            updateProgress('progress14', score14);
+            updateProgress('progress15', score15);
+            updateProgress('progress16', score16);
+            updateProgress('progress17', score17);
+            updateProgress('progress18', score18);
+            updateProgress('progress19', score19);
+            updateProgress('progress20', score20);
+            updateProgress('progress21', score21);
+            updateProgress('progress22', score22);
+            updateProgress('progress23', score23);
+            
+            
+        }
+
+        // Mengatur nilai default nilz dan nil1 dalam localStorage jika belum ada
+        if (localStorage.getItem('nilz') === null) localStorage.setItem('nilz', 25);
+        if (localStorage.getItem('nil1') === null) localStorage.setItem('nil1', 30);
+        if (localStorage.getItem('nil2') === null) localStorage.setItem('nil2', 76);
+        if (localStorage.getItem('nil3') === null) localStorage.setItem('nil3', 30);
+        if (localStorage.getItem('nil4') === null) localStorage.setItem('nil4', 30);
+        if (localStorage.getItem('nil5') === null) localStorage.setItem('nil5', 25);
+        if (localStorage.getItem('nil6') === null) localStorage.setItem('nil6', 30);
+        
+         if (localStorage.getItem('nil7') === null) localStorage.setItem('nil7', 30);
+        if (localStorage.getItem('nil8') === null) localStorage.setItem('nil8', 25);
+        if (localStorage.getItem('nil9') === null) localStorage.setItem('nil9', 30);
+        
+         if (localStorage.getItem('nil10') === null) localStorage.setItem('nil10', 30);
+        if (localStorage.getItem('nil11') === null) localStorage.setItem('nil11', 25);
+        if (localStorage.getItem('nil12') === null) localStorage.setItem('nil12', 30);
+        
+         if (localStorage.getItem('nil13') === null) localStorage.setItem('nil13', 30);
+        if (localStorage.getItem('nil14') === null) localStorage.setItem('nil14', 25);
+        if (localStorage.getItem('nil15') === null) localStorage.setItem('nil15', 30);
+         if (localStorage.getItem('nil16') === null) localStorage.setItem('nil16', 30);
+         
+        if (localStorage.getItem('nil17') === null) localStorage.setItem('nil17', 25);
+        if (localStorage.getItem('nil18') === null) localStorage.setItem('nil18', 30);
+        
+         if (localStorage.getItem('nil19') === null) localStorage.setItem('nill9', 30);
+        if (localStorage.getItem('nil20') === null) localStorage.setItem('nil20', 25);
+        if (localStorage.getItem('nil21') === null) localStorage.setItem('nil21', 30);
+         if (localStorage.getItem('nil22') === null) localStorage.setItem('nil22', 30);
+        if (localStorage.getItem('nil23') === null) localStorage.setItem('nil23', 25);
+    
+        
+
+        // Memuat progress saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', loadProgress);
     </script>
   </body>
   
