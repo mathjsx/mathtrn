@@ -10115,9 +10115,6 @@ Persamaan ini memberikan dua solusi untuk nilai \( x \), yaitu \( x_1 \) dan \( 
 
 
 
-Berikut adalah kode SVG untuk grafik persamaan kuadrat dengan a=1, b=-6, dan c=1, dengan garis simetri terhadap sumbu y yang besar skala y-nya adalah dua kali skala x:
-
-```svg
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
     <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="1" />
     <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="1" />
@@ -10132,32 +10129,10 @@ Berikut adalah kode SVG untuk grafik persamaan kuadrat dengan a=1, b=-6, dan c=1
     
     <line x1="100" y1="0" x2="100" y2="200" stroke="blue" stroke-width="2" />
 </svg>
-```
 
-Dalam kode SVG di atas, grafik persamaan kuadrat ditampilkan dengan garis simetri berwarna biru terhadap sumbu y. Titik A dan B menunjukkan titik potong grafik dengan sumbu x. Semua elemen disesuaikan dengan ukuran 200 x 200 px dan viewBox 0 0 200 200.
 
-Berikut adalah kode SVG untuk grafik persamaan kuadrat dengan a=1, b=-6 dan c=1:
-Berikut adalah kode SVG untuk grafik persamaan kuadrat dengan a=1, b=-6, dan c=1:
 
-```svg
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-    <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="1" />
-    <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="1" />
-    
-    <path d="M0,73 C30,73 70,27 100,27 C130,27 170,73 200,73" fill="none" stroke="black" stroke-width="2" />
-    
-    <circle cx="5" cy="95" r="2" fill="red" />
-    <text x="10" y="90" font-size="10" fill="red">A</text>
-    
-    <circle cx="195" cy="95" r="2" fill="red" />
-    <text x="180" y="90" font-size="10" fill="red">B</text>
-    
-    <line x1="0" y1="73" x2="200" y2="73" stroke="blue" stroke-width="2" />
-</svg>
-```
 
-Dalam kode SVG di atas, garis biru menunjukkan garis simetri dengan besar skala y yang merupakan dua kali skala x. Titik A dan B menunjukkan titik potong grafik dengan sumbu x. Semua elemen disesuaikan dengan ukuran 200 x 200 px dan viewBox 0 0 200 200.
-`
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
   <!-- Garis sumbu x -->
   <line x1="0" y1="100" x2="200" y2="100" stroke="black" />
@@ -10177,138 +10152,6 @@ Dalam kode SVG di atas, garis biru menunjukkan garis simetri dengan besar skala 
   
   <!-- Garis simetrik -->
   <line x1="50" y1="0" x2="150" y2="200" stroke="blue" />
-</svg>
-```
-
-Kode di atas akan membuat grafik persamaan kuadrat pada sebuah SVG dengan ukuran 200 x 200 px dan viewBox 0 0 200 200. Garis sumbu x dan y ditampilkan dalam warna hitam. Grafik persamaan kuadrat ditampilkan dalam warna merah. Titik potong A dan B ditandai dengan titik hijau dan label A dan B, sedangkan garis simetris ditampilkan dalam warna biru.
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Garis sumbu x -->
-  <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="1" />
-
-  <!-- Garis sumbu y -->
-  <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="1" />
-
-  <!-- Grafik persamaan kuadrat -->
-  <path d="M0,100 L100,0 L200,100" stroke="blue" fill="none" />
-
-  <!-- Titik potong A -->
-  <circle cx="1" cy="99" r="2" fill="red" />
-
-  <!-- Titik potong B -->
-  <circle cx="5" cy="95" r="2" fill="red" />
-</svg>
-
-<svg width="200" height="200" viewBox="0 0 200 200">
-
-  <line x1="0" y1="100" x2="200" y1="100" stroke="black" stroke-width="2" />
-  <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="2" />
-
-  <text x="5" y="15" font-size="8">0</text>
-  <text x="195" y="15" font-size="8">10</text>
-  <text x="15" y="195" font-size="8">10</text>
-  <text x="195" y="195" font-size="8">0</text>
-
-  <path d="M 0,100 Q 100,60 200,100" stroke="blue" stroke-width="2" fill="none" />
-
-  <circle cx="23" cy="100" r="2" stroke="red" fill="red" /> <circle cx="177" cy="100" r="2" stroke="red" fill="red" /> <line x1="100" y1="0" x2="100" y2="200" stroke="blue" stroke-width="1" stroke-dasharray="5 5" />
-
-</svg>
-
-
-Kode SVG Grafik Persamaan Kuadrat dengan Titik Potong X dan Garis Simetrik
-Berikut adalah kode SVG untuk grafik persamaan kuadrat dengan a = 1, b = -6, dan c = 1, dengan ukuran 200 x 200 piksel, viewBox 0 0 200 200, titik potong sumbu X (A dan B), dan garis simetrik berwarna biru:
-<svg width="200" height="200" viewBox="0 0 200 200">
-
-  <line x1="0" y1="100" x2="200" y1="100" stroke="black" stroke-width="2" />
-  <line x1="100" y1="0" x2="100" y2="200" stroke="black" stroke-width="2" />
-
-  <text x="5" y="15" font-size="8">0</text>
-  <text x="195" y="15" font-size="8">10</text>
-  <text x="15" y="195" font-size="8">10</text>
-  <text x="195" y="195" font-size="8">0</text>
-
-  <path d="M 0,100 Q 100,60 200,100" stroke="blue" stroke-width="2" fill="none" />
-
-  <circle cx="23" cy="100" r="2" stroke="red" fill="red" /> <circle cx="177" cy="100" r="2" stroke="red" fill="red" /> <line x1="100" y1="0" x2="100" y2="200" stroke="blue" stroke-width="1" stroke-dasharray="5 5" />
-
-</svg>
-
-Penjelasan:
- * Kode SVG: Kode ini mendefinisikan elemen SVG yang akan dirender di browser.
- * Ukuran: Atribut width dan height menentukan ukuran grafik dalam piksel. Atribut viewBox menentukan area pandang grafik.
- * Garis Koordinat: Garis hitam tebal ditarik untuk mewakili sumbu X dan Y.
- * Skala: Teks kecil ditambahkan di sudut-sudut grafik untuk menunjukkan skala.
- * Grafik Fungsi Kuadrat: Jalur biru digambar untuk mewakili grafik fungsi kuadrat y = ax^2 + bx + c dengan a = 1, b = -6, dan c = 1.
- * Titik Potong Sumbu X: Lingkaran merah kecil digambar di titik-titik di mana grafik memotong sumbu X. Titik A terletak di (23, 100) dan titik B terletak di (177, 100).
- * Garis Simetrik: Garis biru putus-putus ditarik melalui titik puncak grafik, yang merupakan garis simetrik dari parabola. Garis simetrik ini bertepatan dengan sumbu Y karena a = 1.
-Catatan:
- * Anda dapat mengubah nilai a, b, dan c untuk mendapatkan grafik fungsi kuadrat yang berbeda.
- * Anda dapat mengubah warna, gaya, dan ketebalan garis dan bentuk sesuai keinginan.
- * Anda dapat menambahkan label untuk sumbu X dan Y dan judul untuk grafik.
-
-
-
-<svg width="100" height="100" viewBox="0 0 100 100">
-
-  <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2" />
-  <line x1="50" y1="0" x2="50" y2="100" stroke="black" stroke-width="2" />
-
-  <text x="5" y="5" font-size="8">0</text>
-  <text x="95" y="5" font-size="8">10</text>
-  <text x="5" y="95" font-size="8">10</text>
-  <text x="95" y="95" font-size="8">0</text>
-
-  <path d="M 0,50 Q 50,30 100,50" stroke="blue" stroke-width="2" fill="none" />
-
-  <circle cx="3" cy="50" r="2" stroke="red" fill="red" />
-  <circle cx="97" cy="50" r="2" stroke="red" fill="red" />
-
-  <line x1="50" y1="0" x2="50" y2="100" stroke="blue" stroke-width="1" stroke-dasharray="5 5" />
-
-</svg>
-
-<svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="100%" height="100%" fill="white" />
-  
-  <!-- Axes -->
-  <line x1="0" y1="50" x2="100" y2="50" stroke="black" />
-  <line x1="50" y1="0" x2="50" y2="100" stroke="black" />
-  
-  <!-- X-axis labels -->
-  <text x="95" y="55" font-family="Arial" font-size="2">X</text>
-  <text x="55" y="5" font-family="Arial" font-size="2">Y</text>
-  
-  <!-- Quadratic curve -->
-  <path d="M 0 61 Q 25 16, 50 1 Q 75 16, 100 61" stroke="blue" fill="none" />
-  
-  <!-- Axis of Symmetry -->
-  <line x1="50" y1="0" x2="50" y2="100" stroke="blue" stroke-dasharray="2,2" />
-  
-  <!-- Intersection points with X-axis -->
-  <circle cx="11.74" cy="50" r="1" fill="red" />
-  <text x="13" y="49" font-family="Arial" font-size="2">(0.17, 0)</text>
-  
-  <circle cx="88.26" cy="50" r="1" fill="red" />
-  <text x="85" y="49" font-family="Arial" font-size="2">(5.83, 0)</text>
-</svg>
-<svg width="200" height="200" viewBox="0 0 100 100">
-
-  <line x1="0" y1="50" x2="100" y2="50" stroke="black" stroke-width="2" />
-  <line x1="50" y1="0" x2="50" y2="100" stroke="black" stroke-width="2" />
-
-  <text x="5" y="5" font-size="8">0</text>
-  <text x="95" y="5" font-size="8">10</text>
-  <text x="5" y="95" font-size="8">10</text>
-  <text x="95" y="95" font-size="8">0</text>
-
-  <path d="M 0,50 Q 50,30 100,50" stroke="blue" stroke-width="2" fill="none" />
-
-  <circle cx="3" cy="50" r="2" stroke="red" fill="red" />
-  <circle cx="97" cy="50" r="2" stroke="red" fill="red" />
-
-  <line x1="50" y1="0" x2="50" y2="100" stroke="blue" stroke-width="1" stroke-dasharray="5 5" />
-
 </svg>
 
 
