@@ -1,0 +1,19 @@
+.soal-container {
+ background:blue;
+  color: black;
+  text-align: left;
+
+}
+
+.question-box {
+  margin-bottom: 1rem;
+  border-radius: 5px;
+height:auto;
+}
+
+button {
+  margin-right: 0.5rem;
+}
+
+
+
