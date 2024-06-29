@@ -25,16 +25,16 @@ const narasi = [
 ];
 
 const judulan = [
-  "Judul Artikel 1",
-  "Judul Artikel 2",
-  "Judul Artikel 3",
-  "Akr",
-  "Judul Artikel 5",
-  "Judul Artikel 6",
-  "Judul Artikel 7",
-  "Judul Artikel 8",
-  "Judul Artikel 9",
-  "Judul Artikel 10"
+  "Bilangan Berpangkat",
+  "Persamaan Linier",
+  "Sistem Persamaan Linier",
+  "Sistem Pertidaksamaan Linier",
+  "Persamaan Eksponen",
+  "Persamaan Kuadrat",
+  "Barisan dan Deret",
+  "Trigonometri",
+  "Peluang",
+  "Statistik"
 ];
 
 const score = [
